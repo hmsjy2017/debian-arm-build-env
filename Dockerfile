@@ -19,8 +19,9 @@ RUN set -ex && \
 
 # Golang
 RUN set -ex && \
-    curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash && \
-    bin/g install 1.18
+    wget https://github.com/voidint/g/releases/download/v1.2.1/g1.2.1.linux-arm64.tar.gz && \
+    ./g install 1.18 && \
+    rm g
 
 # Rust
 RUN set -ex && \
