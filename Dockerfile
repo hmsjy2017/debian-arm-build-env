@@ -15,7 +15,7 @@ RUN set -ex && \
 
 # Python
 RUN set -ex && \
-    apt-get -qqy install python3 python2
+    apt-get -qqy install python3 python3-pip python2
 
 # Golang
 RUN set -ex && \
