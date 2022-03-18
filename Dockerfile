@@ -19,16 +19,14 @@ RUN set -ex && \
 
 # Golang
 RUN set -ex && \
-    wget https://github.com/voidint/g/releases/download/v1.2.1/g1.2.1.linux-arm64.tar.gz && \
-    ./g install 1.18 && \
-    rm g
+    apt -qqy install golang-1.17
 
 # Rust
 RUN set -ex && \
-    wget https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-init.sh && \
-    chmod +x rustup-init.sh && \
-    ./rustup-init.sh -y --no-modify-path --profile minimal && \
-    rm rustup-init.sh
+    wget -O /root/rustup-init.sh https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-init.sh && \
+    chmod +x /root/rustup-init.sh && \
+    ./root/rustup-init.sh -y --no-modify-path --profile minimal && \
+    rm /root/rustup-init.sh
 
 # Ruby
 RUN set -ex && \
