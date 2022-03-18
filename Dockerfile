@@ -20,14 +20,14 @@ RUN set -ex && \
 # Golang
 RUN set -ex && \
     curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash && \
-    g install 1.18
+    bin/g install 1.18
 
 # Rust
 RUN set -ex && \
     wget https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-init.sh && \
     chmod +x rustup-init.sh && \
     ./rustup-init.sh -y --no-modify-path --profile minimal && \
-    rm rustup-init.sh && \
+    rm rustup-init.sh
 
 # Ruby
 RUN set -ex && \
