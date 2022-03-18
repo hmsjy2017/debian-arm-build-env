@@ -23,5 +23,17 @@ RUN set -ex && \
     source ~/.bashrc && \
     g install 1.18
 
+# Rust
+RUN set -ex && \
+    wget https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-init.sh && \
+    chmod +x rustup-init.sh && \
+    ./rustup-init.sh -y --no-modify-path --profile minimal && \
+    rm rustup-init.sh && \
+    source $HOME/.cargo/env
+
+# Ruby
+RUN set -ex && \
+    apt-get -qqy install ruby-full
+
 USER pi
 WORKDIR /home/pi
