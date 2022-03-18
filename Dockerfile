@@ -19,7 +19,7 @@ RUN set -ex && \
 
 # Golang
 RUN set -ex && \
-    apt -qqy install golang-1.17
+    apt-get -qqy install golang
 
 # Rust
 RUN set -ex && \
