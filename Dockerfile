@@ -32,5 +32,5 @@ RUN set -ex && \
 RUN set -ex && \
     apt-get -qqy install ruby-full
 
-USER pi
-WORKDIR /home/pi
+USER root
+WORKDIR /root
