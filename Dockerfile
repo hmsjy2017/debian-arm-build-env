@@ -20,7 +20,6 @@ RUN set -ex && \
 # Golang
 RUN set -ex && \
     curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash && \
-    source ~/.bashrc && \
     g install 1.18
 
 # Rust
@@ -29,7 +28,6 @@ RUN set -ex && \
     chmod +x rustup-init.sh && \
     ./rustup-init.sh -y --no-modify-path --profile minimal && \
     rm rustup-init.sh && \
-    source $HOME/.cargo/env
 
 # Ruby
 RUN set -ex && \
